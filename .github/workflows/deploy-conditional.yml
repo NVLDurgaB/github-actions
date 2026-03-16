@@ -17,5 +17,5 @@ jobs:
     if: ${{ secrets.MY_VARIABLE == 'Secret value'}}
     steps:
       - name: Deploy Application
-        run: echo "Deploying application..."  
+        run: echo "Deploying application... MY_VARIABLE is matched!"  
 
