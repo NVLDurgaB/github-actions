@@ -4,17 +4,16 @@ on:
     branches:
       - develop
 env:
-  MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
+  MY_VARIABLE: ${{ env.MY_VARIABLE }}
 jobs:
   print-variable:
     runs-on: ubuntu-latest
     steps:
       - name: Print Variable
-        run: echo "The value of the variable is:" $MY_VARIABLE
+        run: echo "The value of the env variable is:" $MY_VARIABLE
   deploy:
     runs-on: ubuntu-latest
-    needs: print-variable
-    if: ${{ secrets.MY_VARIABLE == 'Secret value'}}
+    if: ${{ secrets.MY_VARIABLE == 'abc'}}
     steps:
       - name: Deploy Application
         run: echo "Deploying application... MY_VARIABLE is matched!"  
