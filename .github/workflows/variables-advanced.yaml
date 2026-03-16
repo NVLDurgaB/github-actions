@@ -1,6 +1,6 @@
 name: Environment Variables and Secrets
 on: 
-  push:
+  workflow_dispatch:
 
 env:
   APP_ENV: production
