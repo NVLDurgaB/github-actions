@@ -9,3 +9,4 @@ jobs:
     steps:
       - name: Print Variable
         run: echo "The value of the variable is:" $MY_VARIABLE
+
