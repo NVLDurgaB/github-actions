@@ -1,6 +1,8 @@
 name: Variable
 on: 
   workflow_dispatch:
+env:
+  MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
 jobs:
   print-variable:
     runs-on: ubuntu-latest
