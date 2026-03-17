@@ -3,10 +3,11 @@ on:
   push:
     branches:
       - develop
-env:
-  MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
+
 jobs:
   print-variable:
+    env:
+      MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
     runs-on: ubuntu-latest
     steps:
       - name: Print Variable
