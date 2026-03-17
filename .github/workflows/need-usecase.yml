@@ -1,0 +1,36 @@
+name: Need Use Case
+on: 
+  pull_request:
+    branches:
+      - develop
+    types: 
+      - opened
+    
+jobs:
+
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install
+        run: echo "Step 1 — installing..."
+
+  test:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - name: Test
+        run: echo "Step 2 — testing..."
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Build
+        run: echo "Step 3 — building..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        run: echo "Step 4 — deploying..."
