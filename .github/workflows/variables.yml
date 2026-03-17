@@ -6,10 +6,10 @@ on:
 
 jobs:
   print-variable:
-    env:
-      MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
     runs-on: ubuntu-latest
     steps:
       - name: Print Variable
         run: echo "The value of the variable is:" $MY_VARIABLE
+        env:
+          MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
 
