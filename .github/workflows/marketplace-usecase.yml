@@ -1,0 +1,14 @@
+name: Marketplace Action Example
+
+on: [push]
+
+jobs:
+  explore-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: List files in the repository
+        run: |
+          echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+          ls -F
